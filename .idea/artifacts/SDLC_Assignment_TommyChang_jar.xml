@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SDLC_Assignment_TommyChang:jar">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="SDLC_Assignment_TommyChang.jar">
+      <element id="module-output" name="SDLC_Assignment_TommyChang" />
+    </root>
+  </artifact>
+</component>

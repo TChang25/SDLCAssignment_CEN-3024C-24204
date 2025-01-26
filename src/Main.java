@@ -4,12 +4,19 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
+
+/**
+ * Tommy Chang
+ * CEN 3024 - Software Development 1
+ * January 26, 2025
+ * Main.java
+ * This application will ask users if they'd like to manipulate patrons by adding, viewing, or deleting.
+ */
+
 public class Main {
-    // initialize database for use throughout program
     public static Database DB = new Database();
 
     public static void main(String[] args) {
-        // initialize scanner for menu input
         Scanner in = new Scanner(System.in);
 
         System.out.println("Hello. Welcome to the library system.");
@@ -63,7 +70,12 @@ public class Main {
 
     }
 
-    // Main Menu
+    /**
+     * method: menu
+     * parameters: none
+     * return: void
+     * purpose: contains the main menu prompts
+     */
     public static void menu(){
         System.out.println("Please select one of the options by typing the corresponding number.");
         System.out.println("1. View all patrons");
@@ -73,7 +85,12 @@ public class Main {
         System.out.println("5. Exit Application");
     }
 
-    // View all patrons in the database
+    /**
+     * method: viewPatrons
+     * parameters: none
+     * return: void
+     * purpose: prints to console all patrons & details
+     */
     public static void viewPatrons(){
         Scanner in = new Scanner(System.in);
         HashMap<String, Patron> patronsDB = DB.getPatronsDB();
@@ -84,7 +101,12 @@ public class Main {
         in.nextLine();
     }
 
-    // Handles adding a patron, prompts user for patron details. Generates a random patronID for patron.
+    /**
+     * method: addPatron
+     * parameters: none
+     * return: void
+     * purpose: Add a patron to the system by prompting user for console input
+     */
     public static void addPatron(){
         HashMap<String, Patron> patronsDB = DB.getPatronsDB();
         Random randomGenerator = new Random();
@@ -108,7 +130,12 @@ public class Main {
         in.nextLine();
     }
 
-    // Handles deleting the patron from the database using the PatronID
+    /**
+     * method: deletePatron
+     * parameters: none
+     * return: void
+     * purpose: Delete a patron from the system by prompting user for PatronID
+     */
     public static void deletePatron(){
         HashMap<String, Patron> patronsDB = DB.getPatronsDB();
         Scanner in = new Scanner(System.in);
@@ -124,9 +151,14 @@ public class Main {
         in.nextLine();
     }
 
-    // Process patrons from user inputted text file name
-    // example line:
-    // 1245789-Sarah Jones-1136 Gorden Ave. Orlando, FL 32822-40.54
+    /**
+     * method: enterPatronFromTextFile
+     * parameters: none
+     * return: void
+     * purpose: Processes patrons from user inputted text file name
+     *          example text file line:
+     *          1245789-Sarah Jones-1136 Gorden Ave. Orlando, FL 32822-40.54
+     */
     public static void enterPatronFromTextFile(){
         File file;
         Scanner in = new Scanner(System.in);
@@ -159,15 +191,22 @@ public class Main {
 
     }
 
-    // Processes closing of the program.
+    /**
+     * method: exitApplication
+     * parameters: none
+     * return: void
+     * purpose: End the program with a code 0
+     */
     public static void exitApplication(){
         System.exit(0);
     }
 
-    /*
-        Make sure the user has entered a valid Integer.
-        Otherwise, prompt for another input.
-    */
+    /**
+     * method: getIntValueFromInput
+     * parameters: string
+     * return: int
+     * purpose: Prompt user with msg for an int value, if not int, then re-prompt
+     */
     public static int getIntValueFromInput(String msg){
         Scanner in = new Scanner(System.in);
         while (true){
@@ -184,10 +223,12 @@ public class Main {
         }
     }
 
-    /*
-        Make sure the user has entered a valid Double.
-        Otherwise, prompt for another input.
-    */
+    /**
+     * method: getIntValueFromInput
+     * parameters: string
+     * return: double
+     * purpose: Prompt user with msg for a double value, if not double, then re-prompt
+     */
     public static double getDoubleValueFromInput(String msg){
         Scanner in = new Scanner(System.in);
         while (true){
@@ -203,10 +244,13 @@ public class Main {
             }
         }
     }
-    /*
-        Make sure the user has entered a valid String.
-        Otherwise, prompt for another input.
-    */
+
+    /**
+     * method: getIntValueFromInput
+     * parameters: string
+     * return: String
+     * purpose: Prompt user with msg for a String value, if not String, then re-prompt
+     */
     public static String getStringValueFromInput(String msg){
         Scanner in = new Scanner(System.in);
         while (true){
